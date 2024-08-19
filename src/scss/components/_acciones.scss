@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.acciones-inicio-olvidar{
+
+    margin-top: v.$separacion;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        color: v.$blanco;
+        display: block;
+        margin-bottom: calc(v.$separacion / 8);
+        text-align: center;
+    }
+}
+

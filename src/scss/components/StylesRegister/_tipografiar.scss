@@ -1,0 +1,55 @@
+.nombre-pagina-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+  gap: 8px; /* Espacio entre los elementos */
+  margin-bottom: 1rem;
+  white-space: nowrap; /* Evita que los elementos se dividan en varias líneas */
+}
+
+.descripcion-pagina,
+.loader {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 1; /* Elimina cualquier margen adicional */
+  padding: 0; /* Elimina cualquier padding adicional */
+  line-height: 1; /* Ajusta la altura de línea para reducir el espacio vertical */
+}
+
+.loader {
+  color: transparent;
+  background: linear-gradient(to right, #2d60ec, #3ccfda);
+  font-size: 24px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate8345 9s linear infinite;
+  font-weight: bold;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .nombre-pagina-register {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px; /* Reduce el espacio entre los elementos en pantallas pequeñas */
+  }
+
+  .descripcion-pagina, .loader {
+    font-size: 20px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+  }
+}
+
+.descripcion-pagina, .loader {
+  font-size: 20px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+}
+
+@keyframes animate8345 {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}

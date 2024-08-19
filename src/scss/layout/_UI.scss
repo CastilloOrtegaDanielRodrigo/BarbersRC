@@ -1,0 +1,39 @@
+//importamos cvariables
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/900.jpg);
+        background-size: cover;
+        background-position: center center;
+
+        @include m.tablet {
+            height: auto;
+        }
+
+        // Ocultar en pantallas pequeñas (móviles)
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+
+        // Mostrar en pantallas grandes (tabletas y PCs)
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .app {
+        width: 95%;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+}
+

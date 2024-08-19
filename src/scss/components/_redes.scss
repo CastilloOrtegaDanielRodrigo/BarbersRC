@@ -1,0 +1,57 @@
+.redes-pag-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaciado entre los íconos */
+    padding: 0;
+  }
+  
+  .social-item {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 50%; /* Hace que los íconos sean circulares */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .social-link:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra en hover */
+  }
+  
+  .social-item:nth-child(1) .social-link {
+    background-color: #3b5999; /* Facebook */
+    color: white;
+  }
+  
+  .social-item:nth-child(2) .social-link {
+    background-color: #55acee; /* Twitter */
+    color: white;
+  }
+  
+  .social-item:nth-child(3) .social-link {
+    background-color: #dd4b39; /* Google Plus */
+    color: white;
+  }
+  
+  .social-item:nth-child(4) .social-link {
+    background-color: #e4405f; /* Instagram */
+    color: white;
+  }
+  

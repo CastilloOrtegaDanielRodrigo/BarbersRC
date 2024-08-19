@@ -1,0 +1,121 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-pag-register-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+}
+
+.boton-pag-register {
+    
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+    
+  }
+  
+  .boton-pag-register:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }
+
+
+  .btn {
+ width: 6.5em;
+ height: 2.3em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+
+button:hover {
+ color: black;
+}
+
+button:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+
+/* BOTON DE INICIAR SESION REGISTER*/ 
+.svg-wrapper {
+    position: relative;
+    width: 190px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .shape {
+    stroke-dasharray: 100 300;
+    stroke-dashoffset: -297;
+    fill: transparent;
+    stroke: rgb(20, 220, 37);
+    stroke-width: 5px;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  
+  .text {
+    font-size: 22px;
+    top: -52px;
+    position: relative;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+  }
+  
+  .svg-wrapper:hover {
+    background-color: rgba(20, 220, 37, 0.2);
+    transition: 1s;
+  }
+/* ___________________________________________________*/ 
+
+.boton-ol{
+  display: flex;
+  justify-content: space-between;
+  margin-top:-6rem ;
+  box-sizing: inherit;
+  
+  
+}

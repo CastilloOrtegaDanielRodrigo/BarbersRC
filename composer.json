@@ -1,0 +1,19 @@
+{
+    "name": "rodri/barber-gus",
+    "description": "PHP 8, MVc, SQL, SASS, GULP, DRCO",
+    "type": "project",
+"autoload": {
+    "psr-4": {
+    "MVC\\" : "./",
+    "Controllers\\" : "./controllers",
+    "Model\\" : "./models"
+    }
+    },
+    "authors": [
+        {
+            "name": "CastilloOrtegaDanielRodrigo",
+            "email": "al222111432@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,91 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario-pag-register {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacio entre los campos del formulario */
+}
+
+.campo-pag-register {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.campo-pag-register label {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.box-input {
+    position: relative;
+}
+
+.border {
+    background-image: linear-gradient(to right bottom, #3700ff, #3700ff, #3700ff, #ff0000, #ff0000);
+    box-shadow: -20px -20px 25px -11px rgba(0, 4, 255, 0.5),
+        25px -10px 30px -11px rgba(0, 47, 255, 0.5),
+        25px 10px 30px -11px rgba(255, 0, 0, 0.5),
+        -25px 10px 30px -11px rgba(4, 0, 255, 0.5);
+
+    padding: 4px;
+    border-radius: 1rem; /* Bordes redondeados */
+    
+}
+.input {
+  background-color: #222222;
+  height: 40px;
+  padding: 0 19px 0 10px;
+  font-size: 1.1em;
+  border: none;
+  color: white;
+  outline: 0;
+  border-radius: 1rem; /* Bordes redondeados 
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del input */
+  width: 100%; /* Asegura que el input tome el 100% del contenedor */
+}
+
+.box-input::after,
+.box-input::before {
+    content: "";
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    z-index: -1;
+}
+
+.box-input::after {
+    bottom: 0;
+    right: 0;
+}
+
+.box-input::before {
+    top: 0;
+    left: 0;
+}
+
+.input::placeholder {
+    transition: all 0.5s ease-in, transform 0.2s ease-in 0.6s;
+}
+
+.input:focus::placeholder {
+    padding-left: 165px;
+    transform: translateY(-50px);
+}
+
+.contenedor-pag-register-boton {
+    text-align: center;
+}
+
+/*.boton-pag-register {
+    background-color: #e300ff;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}*/
