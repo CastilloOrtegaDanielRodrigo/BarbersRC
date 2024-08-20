@@ -15,6 +15,7 @@
                 id="nombre"
                 name="nombre"
                 placeholder="Tu nombre"
+                value="<?php echo s($usuario->nombre);?>"
                 class="input">
             </div>
         </div>
@@ -30,6 +31,7 @@
                 id="apellido"
                 name="apellido"
                 placeholder="Tus Apellido"
+                value="<?php echo s($usuario->apellido);?>"
                 class="input">
             </div>
         </div>
@@ -45,6 +47,7 @@
                 id="telefono"
                 name="telefono"
                 placeholder="Tu numero de telefono"
+                value="<?php echo s($usuario->telefono);?>"
                 class="input">
             </div>
         </div>
@@ -60,6 +63,7 @@
                 id="email"
                 name="email"
                 placeholder="Tu Correo Electronico"
+                value="<?php echo s($usuario->email);?>"
                 class="input">
             </div>
         </div>

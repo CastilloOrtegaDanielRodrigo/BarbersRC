@@ -1,6 +1,7 @@
 <?php
 namespace Controllers;
 
+use Model\Usuario;
 use MVC\Router;
 
 class LoginControllers{
@@ -24,7 +25,15 @@ class LoginControllers{
         echo "Ubicacion: RECOVER";
     }
 
-    public static function register(Router $router){ //REGISTAR CUENTA
-        $router->render('auth/register-account');
+    public static function register(Router $router){ //REGISTAR CUENTA CREAR-CUENTA
+        $usuario = new Usuario($_POST);
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $usuario->sincronizar($_POST);
+        }
+
+        $router->render('auth/register-account', [
+            'usuario' => $usuario
+
+        ]);
     }
 }
