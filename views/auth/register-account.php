@@ -96,5 +96,5 @@
     </svg>
     <a href="/" class="text">Iniciar sesión</a>
 </div>
-    <a href="/recovery" class="boton-olvidar">¿Olvidaste tu contraseña?</a>
+    <a href="/recovery" class="boton-olvidar">¿Olvidaste tu contraseñaa?</a>
 </div>
