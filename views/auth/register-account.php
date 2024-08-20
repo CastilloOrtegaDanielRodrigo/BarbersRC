@@ -4,8 +4,11 @@
 <div class="nombre-pagina-register">
     <p class="descripcion-pagina">Crea una cuenta en </p> <p class="loader">Barber's RC</p>
 </div>
+<?php 
+    include_once __DIR__ . "/../templates/alertas.php"
+?>
 
-    <form class="formulario-pag-register" method="POST" action="/register-account">
+    <form class="formulario-pag-register" action="/register-account" method="POST">
     <div class="campo-pag-register">
         <label for="nombre">Nombre</label> 
         <div class="box-input"> <!-- validación selectiva de la entrada del usuario -->

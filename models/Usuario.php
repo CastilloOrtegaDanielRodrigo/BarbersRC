@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+
 class Usuario extends ActiveRecord { //mantiene una referencia en memoria ActiveRecord
     //BASE DE DATOS
     protected static $tabla = 'usuarios';
@@ -17,16 +18,29 @@ class Usuario extends ActiveRecord { //mantiene una referencia en memoria Active
     public$token;
 
     //DEFINIMOS EL CONTRUCTOR
-    public function __construct($args = []) { 
+    public function __construct($args = []) {
          $this->id = $args['id']?? null; //VALIDAR SI ESTAN VACIOS ESOS DATOS EN EL OBJETO
          $this->nombre = $args['nombre']?? '';
          $this->apellido = $args['apellido']?? '';
          $this->email = $args['email']?? '';
          $this->password = $args['password']?? '';
          $this->telefono = $args['telefono']?? '';
-         $this->admin = $args['noadminmbre']?? null;
+         $this->admin = $args['admin']?? null;
          $this->confirmado = $args['confirmado']?? null;
          $this->token = $args['token']?? '';
 
     }  
+
+    //MENSAJES DE VALIDACION DE USUARIO{
+    public function validarNuevaCuenta() {
+        if(!$this->nombre) {
+            self::$alertas['error'][] = 'El nombre del cliente es Obligatorio';
+        }
+
+        if(!$this->apellido) {
+            self::$alertas['error'][] = 'El apellido del cliente es Obligatorio';
+        }
+    
+        return self::$alertas;
+    }
 }

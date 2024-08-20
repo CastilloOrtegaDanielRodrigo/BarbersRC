@@ -26,13 +26,20 @@ class LoginControllers{
     }
 
     public static function register(Router $router){ //REGISTAR CUENTA CREAR-CUENTA
-        $usuario = new Usuario($_POST);
+        $usuario = new Usuario;
+
+        //ALERTAS VACIAS
+        $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $usuario->sincronizar($_POST);
+            $alertas = $usuario->validarNuevaCuenta();
         }
 
         $router->render('auth/register-account', [
-            'usuario' => $usuario
+            'usuario' => $usuario,
+            'alertas' => $alertas,
+
 
         ]);
     }
