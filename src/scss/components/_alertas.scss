@@ -2,15 +2,41 @@
 @use 'base/mixins' as m;
 
 .alerta {
-    padding: calc(v.$separacion / 4);
+    padding: calc(v.$separacion /7); // Reduce el padding para hacer la alerta más compacta
     color: v.$blanco;
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     font-weight: v.$bold;
     text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo gris claro */
+    border: 1px solid transparent; /* Borde transparente para mantener el tamaño */
 
-    &.error{
-        background-color: v.$rojo;
+    &.error {
+        background-color: rgba(255, 0, 0, 0.1); /* Fondo rojo claro */
+        border-color: rgba(255, 0, 0, 0.5); /* Borde rojo claro */
+    }
+
+    &.success {
+        background-color: rgba(0, 255, 0, 0.1); /* Fondo verde claro */
+        border-color: rgba(0, 255, 0, 0.5); /* Borde verde claro */
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+        fill: currentColor; /* Usa el color actual del texto */
+    }
+    
+    @media (max-width: 768px) {
+        padding: calc(v.$separacion / 6); // Reduce aún más el padding en pantallas pequeñas
+        font-size: 0.75rem; // Disminuye el tamaño de la fuente
+        margin-bottom: 1rem; // Reduce el margen inferior
+    }
+    
+    @media (max-width: 480px) {
+        padding: calc(v.$separacion / 6); // Ajusta el padding para móviles
+        font-size: 0.75rem; // Disminuye más el tamaño de la fuente
+        margin-bottom: 0.75rem; // Reduce el margen inferior en móviles
     }
 }

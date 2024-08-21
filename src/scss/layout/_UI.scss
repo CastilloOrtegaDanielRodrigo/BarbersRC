@@ -1,4 +1,4 @@
-//importamos cvariables
+// importamos cvariables
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
@@ -14,21 +14,24 @@
         background-image: url(../img/900.jpg);
         background-size: cover;
         background-position: center center;
-
+        opacity: 0;  // Comienza con la opacidad en 0
+    
+        transition: opacity 0.5s ease-in-out; // Añade una transición suave
+    
         @include m.tablet {
             height: auto;
         }
-
-        // Ocultar en pantallas pequeñas (móviles)
+    
         @media screen and (max-width: 767px) {
             display: none;
         }
-
-        // Mostrar en pantallas grandes (tabletas y PCs)
+    
         @media screen and (min-width: 768px) {
             display: block;
+            opacity: 1;  // Cambia la opacidad a 1 cuando la imagen está visible
         }
     }
+    
 
     .app {
         width: 95%;
@@ -36,4 +39,3 @@
         padding: 2rem 0;
     }
 }
-

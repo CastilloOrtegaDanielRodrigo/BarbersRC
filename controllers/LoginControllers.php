@@ -34,6 +34,12 @@ class LoginControllers{
 
             $usuario->sincronizar($_POST);
             $alertas = $usuario->validarNuevaCuenta();
+
+            //reviar que alertas este vacio
+
+            if(empty($alertas)){
+                //VERIFICAR QUE EL USUARIO NO ESTE REGGISTRADO
+            }
         }
 
         $router->render('auth/register-account', [

@@ -34,12 +34,28 @@ class Usuario extends ActiveRecord { //mantiene una referencia en memoria Active
     //MENSAJES DE VALIDACION DE USUARIO{
     public function validarNuevaCuenta() {
         if(!$this->nombre) {
-            self::$alertas['error'][] = 'El nombre del cliente es Obligatorio';
+            self::$alertas['error'][] = 'El nombre es Obligatorio';
         }
 
         if(!$this->apellido) {
-            self::$alertas['error'][] = 'El apellido del cliente es Obligatorio';
+            self::$alertas['error'][] = 'El apellido es Obligatorio';
         }
+
+        if(!$this->email) {
+            self::$alertas['error'][] = 'El Correo Electronico es Obligatorio';
+        }
+        if(!$this->telefono) {
+            self::$alertas['error'][] = 'El Telefono es Obligatorio';
+        }
+
+        if(!$this->password) {
+            self::$alertas['error'][] = 'La contraseña es Obligatorio';
+        }
+
+        if(strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'La Contraseña debe contener al menos 6 caracteres';
+        }
+    
     
         return self::$alertas;
     }
