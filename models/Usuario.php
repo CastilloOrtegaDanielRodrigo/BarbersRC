@@ -59,4 +59,25 @@ class Usuario extends ActiveRecord { //mantiene una referencia en memoria Active
     
         return self::$alertas;
     }
+//REVISA SI EL USUARIO EXISTE
+    public function existeUsuario() {
+        $query = " SELECT * FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
+        
+        $resultado = self::$db->query($query);
+
+        if($resultado->num_rows) {
+            self::$alertas['error'][] = 'El Usuario ya esta registrado';
+
+        }
+
+        return $resultado;
+    }
+
+    public function hashPassword() {
+        $this->password = password_haSh($this->password, PASSWORD_BCRYPT);
+    }
+
+    public function creaToken() {
+        $this->token = uniqid();
+    }
 }

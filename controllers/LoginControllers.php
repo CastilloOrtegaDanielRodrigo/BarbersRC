@@ -39,6 +39,19 @@ class LoginControllers{
 
             if(empty($alertas)){
                 //VERIFICAR QUE EL USUARIO NO ESTE REGGISTRADO
+                $resultado = $usuario->existeUsuario();
+
+                if($resultado->num_rows){
+                    $alertas = Usuario::getAlertas();
+                } else {
+                    //HASHEAR EL PASSWORD - CIFRASRLO
+                    $usuario->hashPassword();
+
+                    //GENERAR UN TOKEN UNICO
+                    $usuario->creaToken();
+
+                    debuguear($usuario);
+                }
             }
         }
 
